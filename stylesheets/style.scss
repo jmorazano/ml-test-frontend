@@ -1,1 +1,18 @@
 @import 'tabs_style';
+
+body {
+    margin: auto;
+    max-width: 980px;
+}
+
+figure.prod_img, form.buy_me {
+    display: inline-block;
+    width: 50%;
+    position: relative;
+    vertical-align: top;
+}
+
+.myCarousel img {
+    max-width: 100%;
+    max-height: 100%;
+}

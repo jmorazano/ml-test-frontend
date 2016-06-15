@@ -8,7 +8,10 @@
 // var dropdown2 = new ch.Dropdown(qS('.myDropdownSkin'),{'skin': true});
 
 // Carousel
-var carousel = new ch.Carousel(qS('.myCarousel'), {"pagination": true});
+var carousel = new ch.Carousel(qS('.myCarousel'), {
+    "pagination": true, 
+    "limitPerPage": 3
+});
 
 // $el jQuery selector
 function qS(selector) { return document.querySelector(selector); };
