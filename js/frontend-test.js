@@ -1,11 +1,11 @@
-// Create a new Dropdown.
-var dropdown1 = new ch.Dropdown(qS('.myDropdown'));
+// // Create a new Dropdown.
+// var dropdown1 = new ch.Dropdown(qS('.myDropdown'));
 
-// Create a new DropdownNav.
-var dropdown3 = new ch.Dropdown(qS('.myDropdownNav'),{'shortcuts': false, 'skin': true});
+// // Create a new DropdownNav.
+// var dropdown3 = new ch.Dropdown(qS('.myDropdownNav'),{'shortcuts': false, 'skin': true});
 
-// Create a new DropdownSkin.
-var dropdown2 = new ch.Dropdown(qS('.myDropdownSkin'),{'skin': true});
+// // Create a new DropdownSkin.
+// var dropdown2 = new ch.Dropdown(qS('.myDropdownSkin'),{'skin': true});
 
 // Carousel
 var carousel = new ch.Carousel(qS('.myCarousel'), {"pagination": true});
