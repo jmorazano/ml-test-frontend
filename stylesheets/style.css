@@ -12,8 +12,7 @@ dl {
  */
 .tabPanel-widget {
   position: relative;
-  /* containing block for headings (top:0) */
-  background: #999; }
+  /* containing block for headings (top:0) */ }
 
 /**
  * because labels come first in source order - we use z-index to move them in front of the headings
@@ -42,12 +41,14 @@ dl {
   position: relative;
   margin: 0;
   text-align: center;
-  background: #999;
-  color: #fff; }
+  background: #666;
+  color: #fff;
+  box-sizing: content-box;
+  border: 1px solid transparent; }
 
-.tabPanel-widget > label {
-  border-right: 1px solid #fff; }
-
+/*.tabPanel-widget > label {
+  border-right: 1px solid #fff;  
+}*/
 /**
  * all first level labels and headings after the very first ones 
  */
@@ -63,11 +64,11 @@ dl {
  */
 .tabPanel-widget label:nth-child(1),
 .tabPanel-widget h2:nth-child(3) {
-  left: 0em; }
+  left: 2em; }
 
 .tabPanel-widget label:nth-child(5),
 .tabPanel-widget h2:nth-child(7) {
-  left: 9em; }
+  left: 11em; }
 
 .tabPanel-widget label:nth-child(9),
 .tabPanel-widget h2:nth-child(11) {
@@ -75,13 +76,12 @@ dl {
 
 /**
  * we visually hide all the panels
- * https://developer.yahoo.com/blogs/ydn/clip-hidden-content-better-accessibility-53456.html
  */
 .tabPanel-widget input + h2 + div {
   position: absolute !important;
   clip: rect(1px, 1px, 1px, 1px);
   padding: 0 !important;
-  border: 0 !important;
+  border: 2px solid !important;
   height: 1px !important;
   width: 1px !important;
   overflow: hidden; }
@@ -102,7 +102,7 @@ dl {
   cursor: pointer; }
 
 .tabPanel-widget > div {
-  background: #f0f0f0;
+  /*background: #f0f0f0;*/
   padding: 1em; }
 
 /**
@@ -116,8 +116,7 @@ dl {
  * this is to style the tabs when they get focus (visual cue)
  */
 .tabPanel-widget input[name="tabs"]:focus + h2 {
-  outline: 1px dotted #000;
-  outline-offset: 10px; }
+  outline: none; }
 
 /**
  * reset of the above within the tab panel (for pointing-device users)
@@ -129,12 +128,16 @@ dl {
  * visual cue of the selection
  */
 .tabPanel-widget input[name="tabs"]:checked + h2 {
-  background: #333; }
+  background: #fff;
+  color: #333;
+  box-sizing: content-box;
+  border: 1px solid;
+  border-bottom: 1px solid #fff; }
 
 /**
  * the marker for tabs (down arrow)
  */
-.tabPanel-widget input[name="tabs"]:checked + h2:after {
+/*.tabPanel-widget input[name="tabs"]:checked + h2:after {
   content: '';
   margin: auto;
   position: absolute;
@@ -145,8 +148,8 @@ dl {
   height: 0;
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
-  border-top: 10px solid #333; }
-
+  border-top: 10px solid #333;
+}*/
 /**
  * Make it plain/simple below 45em (stack everything)
  */
@@ -183,8 +186,70 @@ figure.prod_img, form.buy_me {
   position: relative;
   vertical-align: top; }
 
+figure img {
+  width: 100%; }
+
+.carousel_wrap {
+  position: absolute;
+  max-width: 100%;
+  bottom: 0; }
+
+.tabs_wrap img {
+  width: 100%; }
+
 .myCarousel img {
   max-width: 100%;
   max-height: 100%; }
+
+.prod_intro {
+  display: flex;
+  flex-flow: row wrap;
+  margin-bottom: 30px;
+  border-bottom: 1px solid;
+  padding-bottom: 30px; }
+
+article.price.ch-price {
+  font-size: 2.8em; }
+
+header h1 {
+  font-size: 2.3em;
+  line-height: 1.2em;
+  margin: 30px 0px; }
+
+.fill_me .ch-form-row-inline {
+  margin: 20px 0px 10px; }
+
+input.ch-btn.ch-btn-large {
+  margin-top: 15px; }
+
+span.ch-box-ok, span.ch-box-info {
+  background-color: transparent; }
+
+.price .ch-price sup {
+  font-size: 0.5em; }
+
+.tabPanel-widget p {
+  padding-left: 30px; }
+
+@media only screen and (max-width: 790px) and (min-width: 240px) and (orientation: portrait) {
+  figure.prod_img, form.buy_me {
+    width: 100%; }
+
+  article.price.ch-price {
+    text-align: center;
+    margin-top: 20px; }
+
+  .carousel_wrap {
+    position: relative; } }
+@media only screen and (max-width: 790px) and (min-width: 540px) and (orientation: landscape) {
+  figure.prod_img, form.buy_me {
+    width: 100%; }
+
+  article.price.ch-price {
+    text-align: center;
+    margin-top: 20px; }
+
+  .carousel_wrap {
+    position: relative; } }
 
 /*# sourceMappingURL=style.css.map */

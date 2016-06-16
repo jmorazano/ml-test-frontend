@@ -12,7 +12,93 @@ figure.prod_img, form.buy_me {
     vertical-align: top;
 }
 
+figure img {
+    width: 100%;
+}
+
+.carousel_wrap {
+    position: absolute;
+    max-width: 100%;
+    bottom: 0;
+}
+
+.tabs_wrap img {
+    width: 100%;
+}
+
 .myCarousel img {
     max-width: 100%;
     max-height: 100%;
+}
+
+.prod_intro {
+    display: flex;
+    flex-flow: row wrap;
+    margin-bottom: 30px;
+    border-bottom: 1px solid;
+    padding-bottom: 30px;
+}
+
+article.price.ch-price {
+    font-size: 2.8em;
+}
+
+header h1 {
+    font-size: 2.3em;
+    line-height: 1.2em;
+    margin: 30px 0px;
+}
+
+.fill_me .ch-form-row-inline {
+    margin: 20px 0px 10px;
+}
+
+input.ch-btn.ch-btn-large {
+    margin-top: 15px;
+}
+
+span.ch-box-ok, span.ch-box-info {
+    background-color: transparent;
+}
+
+.price .ch-price sup {
+    font-size: 0.5em;
+}
+
+.tabPanel-widget p {
+    padding-left: 30px;
+}
+
+@media only screen and (max-width: 790px) and (min-width: 240px) and (orientation: portrait) {
+
+  figure.prod_img, form.buy_me {
+      width: 100%;
+  }
+
+  article.price.ch-price {
+      text-align: center;
+      margin-top: 20px;
+  }
+
+  .carousel_wrap {
+      position: relative;
+  }
+
+}
+
+@media only screen and (max-width: 790px) and (min-width: 540px) and (orientation: landscape) {
+
+  figure.prod_img, form.buy_me {
+      width: 100%;
+  }
+
+  article.price.ch-price {
+      text-align: center;
+      margin-top: 20px;
+  }
+
+  .carousel_wrap {
+      position: relative;
+  }
+
 }

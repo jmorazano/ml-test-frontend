@@ -65,7 +65,25 @@ module.exports = function(grunt) {
         files: '<%= jshint.lib_test.src %>',
         tasks: ['jshint:lib_test', 'qunit']
       }
+    },
+    htmlmin: {                                     // Task
+      dist: {                                      // Target
+        options: {                                 // Target options
+          removeComments: true,
+          collapseWhitespace: true
+        },
+        files: {                                   // Dictionary of files
+          'index.html': 'html/index.html'     // 'destination': 'source'
+        }
+      }
+      // dev: {                                       // Another target
+      //   files: {
+      //     'dist/index.html': 'src/index.html',
+      //     'dist/contact.html': 'src/contact.html'
+      //   }
+      // }
     }
+
   });
 
   // These plugins provide necessary tasks.
@@ -78,6 +96,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-cssmin');
 
   // Default task.
-  grunt.registerTask('default', ['jshint', 'qunit', 'concat', 'uglify']);
+  grunt.registerTask('default', ['jshint', 'qunit', 'concat', 'uglify', 'htmlmin']);
 
 };
