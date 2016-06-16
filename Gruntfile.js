@@ -22,12 +22,10 @@ module.exports = function(grunt) {
       }
     },
     uglify: {
-      options: {
-        banner: '<%= banner %>'
-      },
-      dist: {
-        src: '<%= concat.dist.dest %>',
-        dest: 'dist/<%= pkg.name %>.min.js'
+      my_target: {
+        files: {
+          'js/frontend-test.min.js': ['js/frontend-test.js']
+        }
       }
     },
     jshint: {
@@ -73,7 +71,7 @@ module.exports = function(grunt) {
           collapseWhitespace: true
         },
         files: {                                   // Dictionary of files
-          'index.html': 'html/index.html'     // 'destination': 'source'
+          'index.html': 'build/index.html'     // 'destination': 'source'
         }
       }
       // dev: {                                       // Another target
@@ -82,6 +80,31 @@ module.exports = function(grunt) {
       //     'dist/contact.html': 'src/contact.html'
       //   }
       // }
+    },
+    autoprefixer: {
+        dist: {
+            files: {
+                'stylesheets/style.css': 'build/style.css'
+            }
+        }
+    },
+    watch: {
+        styles: {
+            files: ['/stylesheets/style.css'],
+            tasks: ['autoprefixer']
+        }
+    },
+
+    cssmin: {
+      target: {
+        files: [{
+          expand: true,
+          cwd: 'stylesheets/',
+          src: ['*.css', '!*.min.css'],
+          dest: 'stylesheets/',
+          ext: '.min.css'
+        }]
+      }
     }
 
   });
@@ -94,6 +117,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-htmlmin');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-autoprefixer');
 
   // Default task.
   grunt.registerTask('default', ['jshint', 'qunit', 'concat', 'uglify', 'htmlmin']);
